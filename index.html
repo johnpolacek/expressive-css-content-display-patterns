@@ -28,15 +28,52 @@
                     <p>Dan Mall’s <a href="http://danielmall.com/articles/content-display-patterns/" target="_blank">Content &amp; Display Patterns article</a> talks about the importance of decoupling content and design.</p>
                     <p>Content patterns are established first, independently from the design. Next, designers create display patterns with various pieces of content. Last, it is up to the developers to “create the hooks for content patterns to flow into the display patterns appropriately”.</p>
                     <p>CSS is entirely concerned with display, yet in the pursuit of being “semantic” we often permeate our stylesheets with content references.</p>
-                    <p>Developers understand the importance of modular design systems. Instead of creating CSS around content patterns, we should be crafting our CSS based upon display patterns.</p>
-                    <p>In the examples below, I use the <a href="http://johnpolacek.github.io/expressive-css/">Expressive CSS</a> approach to build out the layout example from the article.</p>
                     
-                    <p>The benefits of this were:</p>
+                    <div class="bgr-white border pad-2-top pad-2-sides marg-2-bottom">
+<pre><code>&lt;div class="event"&gt;
+    &lt;h1 class="event__title"&gt;Star Wars: The Force Awakens Premiere&lt;/h1&gt;
+    &lt;p class="event__date"&gt;Dec 20, 2015&lt;/p&gt;
+    &lt;p class="event__location"&gt;Ritz East, Philadelphia PA&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    
+                    <p>Developers understand the importance of modular design systems. Instead of creating CSS around content patterns, we could instead craft our CSS based upon display patterns.</p>
+
+                    <p><a href="http://johnpolacek.github.io/expressive-css/">Expressive CSS</a> is an approach to writing lightweight, scalable CSS using utility classes that are easy to write and understand.</p>
+
+                    <div class="bgr-white border pad-2-top pad-2-sides marg-2-bottom">
+<pre><code>&lt;div class="abs pos-bottom pos-left text-white pad-2"&gt;
+    &lt;h2 class="text-reg pad-2-top"&gt;My Great Event&lt;/h2&gt;
+    &lt;span class="bold"&gt;February 17-20&lt;/span&gt;</code></pre>
+                    </div>
+
+                    <p>Many front end developers have a strong negative reaction when they see markup like the above. That’s ok. Try to keep reading if you can.</p>
+
+                    <blockquote class="border bgr-white pad-2 marg-2-top italic">
+                        <p>For individuals weaned on an ideology where “semantic HTML” means using content-derived class names (and even then, only as a last resort), it usually requires you to work on a large application before you can become acutely aware of the impractical nature of that approach. You have to be prepared to disgard old ideas, look at alternatives, and even revisit ways that you may have previously dismissed.</p>
+                        <cite class="text-small italic bold pad-1-bottom block">From <a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/">About HTML Semantics and Front-End Architecture</a> by Necolas Gallagher</cite>
+                    </blockquote>
+                    <ul class="pad-1-vert">
+                        <li><a href="https://blog.colepeters.com/building-and-shipping-functional-css/">Building and shipping functional CSS</a></li>
+                        <li><a href="http://seesparkbox.com/foundry/naming_css_stuff_is_really_hard">Naming CSS Stuff Is Really Hard</a></li>
+                        <li><a href="http://tympanus.net/codrops/2013/01/22/defending-presentational-class-names/">Defending Presentational Class Names</a></li>
+                        <li><a href="http://www.impressivewebs.com/avoid-nonsemantic-classes/">Why Avoid Non-semantic Classes? Because They’re Non-semantic!</a></li>
+                        <li><a href="http://www.smashingmagazine.com/2013/10/21/challenging-css-best-practices-atomic-approach/">Challenging CSS Best Practices</a></li>
+                        <li><a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/">About HTML Semantics and Front-End Architecture</a></li>
+                        <li><a href="http://csswizardry.com/2015/06/contextual-styling-ui-components-nesting-and-implementation-detail/">Contextual Styling: UI Components, Nesting, and Implementation Detail</a></li>
+                        <li><a href="http://www.sitepoint.com/using-helper-classes-dry-scale-css/">Using Helper Classes to DRY and Scale CSS</a></li>
+                    </ul>
+
+                    <p>In the examples below, I demonstrate how one can use the Expressive CSS approach to build a layout like the <a href="http://danielmall.com/articles/content-display-patterns/oreilly-comp2.png">one featured in Dan’s article</a>.</p>
+                    
+                    <p>The benefits of building the layout in this way were:</p>
                     <ul>
                         <li>Maintained separation of content and display by keeping content references out of the CSS.</li>
-                        <li>I was able to quickly build the layout without hardly needing to actually write any new lines of CSS.</li>
-                        <li>It was simple to create a responsive version even though no phone or tablet layout were provided because responsive utility classes make it easy to experiment.</li>
+                        <li>Able to quickly build the layout without hardly needing to actually write any new lines of CSS.</li>
+                        <li>Simple to create a responsive version even though no phone or tablet layout were provided because responsive utility classes make it easy to experiment.</li>
                     </ul>
+
+                    <p>For more information on the principles and benefits of using this approach, check out the <a href="http://johnpolacek.github.io/expressive-css/">Expressive CSS Project Page</a>.</p>
                 </div>
                 
                 
@@ -50,6 +87,10 @@
                 <p>To build this example, I wrote markup then simply added CSS utility classes that are part of the default <a href="http://johnpolacek.github.io/expressive-css/styleguide/">Expressive CSS Styleguide</a>. I was nearly able to achieve the layout without writing any new CSS.</p>
                 <p>There were only two instances when it was necessary to add new styles. I added a <code>.box-gradient-overlay</code> so the white text on the main image would be readable, and a thick border left class for the colored line on the category kicker.</p>
                 <p>Portability is one of the main benefits of the Expressive CSS approach. Scalability is another. As a website grows, it is important to keep stylesheets small and maintainable.</p>
+
+                <p class="marg-2-top"><a href="http://codepen.io/johnpolacek/pen/eJoErV" target="_blank">View on Codepen</a></p>
+                <p><a href="https://github.com/johnpolacek/expressive-css-content-display-patterns" target="_blank">View on Github</a></p>
+                
             </section>
 
             <section class="grid-12 pad-3-vert">
@@ -69,7 +110,8 @@
 
                 <p>When flowing in real content across different screen sizes, various layout issues will likely arise. In this case, the heights of the bottom four events vary quite a bit depending on the content. I added a <code>.grid-flex</code> class to the container to make sure the heights were equalized.</p>
 
-                <p><a href="demo-basic-responsive.html" target="_blank">View the Responsive Demo</a></p>
+                <p class="marg-2-top"><a href="http://codepen.io/johnpolacek/pen/PZgOZe" target="_blank">View on Codepen</a></p>
+                <p><a href="https://github.com/johnpolacek/expressive-css-content-display-patterns" target="_blank">View on Github</a></p>
             </section>
 
             <section class="grid-12 pad-3-vert">
@@ -97,7 +139,7 @@
                     <li><a href="http://danielmall.com/">danielmall.com</a></li>
                     <li><a href="https://twitter.com/danielmall">@danielmall</a></li>
                     <li><a href="http://johnpolacek.com/">johnpolacek.com</a></li>
-                    <li><a href="https://twitter.com/johnpolacek">johnpolacek</a></li>
+                    <li><a href="https://twitter.com/johnpolacek">@johnpolacek</a></li>
                     <li><a href="http://danielmall.com/articles/content-display-patterns/">Content &amp; Display Patterns</a></li>
                     <li><a href="http://johnpolacek.github.io/expressive-css/">Expressive CSS</a></li>
                     <li><a href="http://www.fillmurray.com/">fillmurray.com</a></li>
