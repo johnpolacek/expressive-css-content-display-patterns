@@ -1,0 +1,45 @@
+{
+  "name": "expressive-css",
+  "title": "Expressive CSS",
+  "version": "1.0.2",
+  "description": "A starter template configuration for building sites Expressive CSS.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpolacek/expressive-css.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "tool",
+    "utilities",
+    "responsive"
+  ],
+  "devDependencies": {
+    "onchange": "latest",
+    "node-sass": "latest"
+  },
+  "scripts": {
+    "build": "node-sass css/sass/base.scss css/stylesheets/base.css --output-style expanded && node-sass css/sass/utilities.scss css/stylesheets/utilities.css --output-style compact && node-sass css/sass/components.scss css/stylesheets/components.css --output-style expanded && node-sass css/sass/style.scss css/style.min.css --output-style compressed",
+    "watch": "onchange 'css/sass/**/*' -- npm run build"
+  },
+  "author": {
+    "name": "John Polacek",
+    "url": "http://www.johnpolacek.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnpolacek/expressive-css/issues"
+  },
+  "homepage": "http://johnpolacek.github.io/expressive-css/",
+  "files": [
+    "css",
+    "styleguide",
+    "index.html"
+  ],
+  "readme": "Expressive CSS is not intended to be a library or framework, but rather a presentation of an approach to writing lightweight, scalable CSS using utility classes that are easy to write and understand.\n\nFor more info, go to the [Expressive CSS Project Page](http://johnpolacek.github.io/expressive-css/).\n\nTo install:  \n```npm install expressive-css```\n\nThis project uses npm as its build tool, which is used to process the SASS files via [node-sass CLI](https://github.com/sass/node-sass#command-line-interface). To build the project:  \n```npm run build```\n\nOr, to build the project with every save:  \n```npm run watch```\n\nThis project contains some useful SASS mixins, such as utility generators. Check them out in the [css/sass/_mixins directory](https://github.com/johnpolacek/expressive-css/tree/master/css/sass/_mixins).\n\nIf you like the responsive grid system, check out the [Simple Grid](https://github.com/johnpolacek/simple-grid) and [Simple Grid Generator](https://github.com/johnpolacek/simple-grid-generator).\n\nFind me on Twitter at [@johnpolacek](https://twitter.com/johnpolacek) and online at [johnpolacek.com](http://johnpolacek.com)",
+  "readmeFilename": "README.md",
+  "gitHead": "2ca5b1233c9d357d01bb27bd52f33a57d7aca1f3",
+  "_id": "expressive-css@1.0.2",
+  "_shasum": "0d4711f021af3693cc623d42b2f9e14c12228202",
+  "_from": "expressive-css@*"
+}

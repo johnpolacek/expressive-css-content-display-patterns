@@ -1,0 +1,64 @@
+<div class="grid-12 border-bottom">
+    <div class="grid-12 l-grid-6 l-border-right m-border-bottom s-border-bottom marg-2-bottom">
+        <div class="rel l-pad-2-right pad-2-bottom">
+            <div class="abs pos-top pos-left z-999">
+                <div class="pad-1-sides pad-half-vert bgr-grey-lt border-left-6-blue">
+                    <span class="text-small-2 letter-space-1 uppercase">{{ events[0].category }}</span>
+                </div>
+            </div>
+            <div class="box-gradient-overlay s-after-hidden">
+                <img src="{{ events[0].images.large }}" alt="{{ events[0].images.description }}">
+            </div>
+            <div class="abs pos-bottom pos-left text-white z-9999 pad-2 s-rel s-text-dark s-pad-0">
+                <h2 class="text-reg s-pad-2-top">{{ events[0].title }}</h2>
+                <p class="bold text-small pad-1-bottom">{{ events[0].dates }}, {{ events[0].location }}</p>
+                <p>{{ events[0].description }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-12 l-grid-6">
+        {% for i in range(1,2) %}
+            <div class="rel grid-12 pad-2-left s-pad-0-left{% if i == 2 %} border-top pad-2-vert marg-2-top{% endif %}">
+                <div class="abs pos-top pos-left z-999 pad-2-left s-pad-0-left{% if i == 2 %} pad-2-top{% endif %}">
+                    <div class="pad-1-sides pad-half-vert bgr-grey-lt border-left-6-blue">
+                        <span class="text-small-2 letter-space-1 uppercase">{{ events[i].category }}</span>
+                    </div>
+                </div>
+                <img class="float-left pad-2-right s-pad-2-bottom" src="{{ events[i].images.small }}" alt="{{ events[i].images.description }}">
+                <h3 class="text-reg">{{ events[i].title }}</h3>
+                <p class="bold text-small pad-1-bottom">{{ events[i].dates }}, {{ events[i].location }}</p>
+                <p class="pad-0 text-small">{{ events[i].description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="grid-12 border-bottom grid-flex">
+    {% for i in range(3,6) %}
+        {% if i == 3 %}
+        <div class="grid-3 m-grid-6 s-grid-12 pad-2 s-pad-0-sides border-right s-border-right-0 border-bottom l-border-bottom-0">
+        {% endif %}
+
+        {% if i == 4 %}
+        <div class="grid-3 m-grid-6 s-grid-12 pad-2 s-pad-0-sides l-border-right border-bottom l-border-bottom-0">
+        {% endif %}
+
+        {% if i == 5 %}
+        <div class="grid-3 m-grid-6 s-grid-12 pad-2 s-pad-0-sides border-right s-border-right-0 s-border-bottom">
+        {% endif %}
+
+        {% if i == 6 %}
+        <div class="grid-3 m-grid-6 s-grid-12 pad-2 s-pad-0-sides">
+        {% endif %}
+
+            <div class="marg-1-top marg-2-bottom">
+                <span class="pad-1-sides pad-half-vert bgr-grey-lt border-left-6-blue">
+                    <span class="text-small-2 letter-space-1 uppercase">{{ events[i].category }}</span>
+                </span>
+            </div>
+            <h5 class="text-reg">{{ events[i].title }}</h5>
+            <p class="bold text-small pad-1-bottom">{{ events[i].dates }}, {{ events[i].location }}</p>
+            <p class="text-small pad-0">{{ events[i].description }}</p>
+        </div>
+    {% endfor %}
+</div>

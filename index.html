@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Expressive CSS Content Display Patterns</title>
+        <meta name="description" content="An approach to writing lightweight, scalable CSS using utility classes that are easy to write and understand.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,200,200italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./css/style.min.css">
+        <link rel="shortcut icon" href="favicon.ico">
+    </head>
+    <body class="bgr-grey-lt">
+        <div class="box-1100 box-center group pad-3 s-pad-2">
+            <section class="grid-12 pad-2-top s-pad-0">
+                <div class="grid-12 pad-2-bottom border-bottom marg-3-bottom">
+                    <h1 class="text-green-dk text-light">Content Display Patterns with Expressive CSS</h1>
+                </div>
+                <div class="grid-3 s-grid-12 pad-2-top s-pad-1-top">
+                    <figure>
+                        <a href="http://danielmall.com/articles/content-display-patterns/">
+                            <img class="wide" src="img/events.jpg" alt="Example events page layout from the Content Display Patterns article">
+                        </a>
+                        <figcaption class="pad-1-top text-small-2 text-grey italic">Events Page layout design<br/> from <a href="http://danielmall.com/articles/content-display-patterns/">Content &amp; Display Patterns</a> by Daniel Mall</figcaption>
+                    </figure>
+                </div>
+                <div class="grid-9 s-grid-12 pad-3 s-pad-0-sides s-pad-3-top s-pad-0-bottom">
+                    <p>Dan Mall’s <a href="http://danielmall.com/articles/content-display-patterns/" target="_blank">Content Display Patterns article</a> talks about the importance of decoupling content and design.</p>
+                    <p>Content patterns are established first, independently from the design. Next, designers create display patterns with various pieces of content. Last, it is up to the developers to “create the hooks for content patterns to flow into the display patterns appropriately”.</p>
+                    <p>CSS is entirely concerned with display, yet in the pursuit of being “semantic” we often permeate our stylesheets with content references.</p>
+                    <p>Developers understand the importance of modular design systems. Instead of creating CSS around content patterns, we should be crafting our CSS based upon display patterns.</p>
+                    <p>In the examples below, I use the <a href="http://johnpolacek.github.io/expressive-css/">Expressive CSS</a> approach to build out the layout example from the article.</p>
+                    
+                    <p>The benefits of this were:</p>
+                    <ul>
+                        <li>Maintained separation of content and display by keeping content references out of the CSS.</li>
+                        <li>I was able to quickly build the layout without hardly needing to actually write any new lines of CSS.</li>
+                        <li>It was simple to create a responsive version even though no phone or tablet layout were provided because responsive utility classes make it easy to experiment.</li>
+                    </ul>
+                </div>
+                
+                
+            </section>
+            
+            <section class="grid-12 pad-3-vert marg-2-top">
+                <h3 class="text-blue-dk pad-2-bottom">Basic Demo</h3>
+
+                <iframe class="marg-3-bottom" height='900' scrolling='no' src='//codepen.io/johnpolacek/embed/eJoErV/?height=900&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/johnpolacek/pen/eJoErV/'>Content Display Patterns with Expressive CSS Basic Example</a> by John Polacek (<a href='http://codepen.io/johnpolacek'>@johnpolacek</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                
+                <p>To build this example, I wrote markup then simply added CSS utility classes that are part of the default <a href="http://johnpolacek.github.io/expressive-css/styleguide/">Expressive CSS Styleguide</a>. I was nearly able to achieve the layout without writing any new CSS.</p>
+                <p>There were only two instances when it was necessary to add new styles. I added a <code>.box-gradient-overlay</code> so the white text on the main image would be readable, and a thick border left class for the colored line on the category kicker.</p>
+                <p>Portability is one of the main benefits of the Expressive CSS approach. Scalability is another. As a website grows, it is important to keep stylesheets small and maintainable.</p>
+            </section>
+
+            <section class="grid-12 pad-3-vert border-top marg-2-top">
+                <h3 class="text-blue-dk pad-2-bottom">Responsive Demo</h3>
+                
+                <iframe class="marg-3-bottom" height='900' scrolling='no' src='//codepen.io/johnpolacek/embed/PZgOZe/?height=900&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/johnpolacek/pen/PZgOZe/'>Content Display Patterns with Expressive CSS Responsive Example</a> by John Polacek (<a href='http://codepen.io/johnpolacek'>@johnpolacek</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+
+                <p>The article only had an example for the desktop layout, but with <a href="http://johnpolacek.github.io/simple-grid/">Simple Grid</a> and our responsive utility classes, it was quick and easy to adjust the layout for different screen sizes. <span class="s-hidden">(Adjust your browser window width to see the responsive layout adjustments)</span></p>
+                <div class="bgr-white border pad-2 marg-2-bottom">
+<pre><code><span class="text-grey">// Before</span>
+&lt;div class="grid-6 border-right marg-2-bottom"&gt;
+
+<span class="text-grey">// After</span>
+&lt;div class="grid-12 l-grid-6 l-border-right m-border-bottom s-border-bottom marg-2-bottom"&gt;
+</code></pre>
+                </div>
+
+                <p>When flowing in real content across different screen sizes, various layout issues will likely arise. In this case, the heights of the bottom four events vary quite a bit depending on the content. I added a <code>.grid-flex</code> class to the container to make sure the heights were equalized.</p>
+
+                <p><a href="demo-basic-responsive.html" target="_blank">View the Responsive Demo</a></p>
+            </section>
+
+            <section class="grid-12 pad-3-vert marg-2-top">
+                <h3 class="text-blue-dk pad-2-bottom">Template Demo</h3>
+                <p>In the real world, it is likely that you are using templates to render content that comes from a database. In <a href="demo-template.php" target="_blank">this example</a>, I used the <a href="http://twig.sensiolabs.org/">Twig Template Engine</a>. I’ve created some sample data in a JSON file to represent what one might expect to come from the backend to give the templates something to render.</p>
+
+                <div class="bgr-white border pad-2 marg-2-bottom">
+<pre><code>&lt;div class="marg-1-top marg-2-bottom"&gt;
+  &lt;span class="pad-1-sides pad-half-vert bgr-grey-lt border-left-6-blue"&gt;
+    &lt;span class="text-small-2 letter-space-1 uppercase"&gt;{{ events[i].category }}&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;h5 class="text-reg"&gt;{{ events[i].title }}&lt;/h5&gt;
+&lt;p class="bold text-small pad-1-bottom"&gt;{{ events[i].dates }}, {{ events[i].location }}&lt;/p&gt;
+&lt;p class="text-small pad-0"&gt;{{ events[i].description }}&lt;/p&gt;</code></pre>
+                </div>
+
+                <p><a href="demo-template.php" target="_blank">View the Template Demo</a></p>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+{
+	"events": [
+		{
+			"category":"Big Data",
+			"title":"Strata + Hadoop World",
+			"dates":"February 17-20",
+			"images":{
+				"large":"http://fillmurray.com/450/300",
+				"small":"http://fillmurray.com/160/127",
+				"description":"My Great Event guest starring Bill Murray"
+			},
+			"location":"San Jose, CA",
+			"description":"Strata + Hadoop World in San Jose is where big data, data science, and new business fundamentals intersect."
+		},
+		{
+			"category":"Open Source",
+			"title":"OSCON 2015",
+			"dates":"July 20-24",
+			"images":{
+				"large":"http://placecage.com/450/300",
+				"small":"http://placecage.com/160/127",
+				"description":"My Great Event guest starring Nicolas Cage"
+			},
+			"location":"Portland, OR",
+			"description":"OSCON celebrates, defines, and demonstrates the power of open source in the world today."
+		},
+		{
+			"category":"Web Platform",
+			"title":"Fluent",
+			"dates":"April 20-22",
+			"images":{
+				"large":"http://stevensegallery.com/450/300",
+				"small":"http://stevensegallery.com/160/127",
+				"description":"My Great Event guest starring Steven Segal"
+			},
+			"location":"San Francisco, CA",
+			"description":"O’Reilly’s Fluent Conference was created to give web developers a place to gather and learn from each other."
+		},
+		{
+			"category":"Programming",
+			"title":"Software Architecture Conference",
+			"dates":"March 16-19",
+			"images":{
+				"large":"http://fillmurray.com/450/300",
+				"small":"http://fillmurray.com/160/127",
+				"description":"My Great Event guest starring Bill Murray"
+			},
+			"location":"Boston, MA",
+			"description":"This new event provides the in-depth professional training that software architects and aspiring software architects need to succeed."
+		},
+		{
+			"category":"Big Data",
+			"title":"Strata + Hadoop World",
+			"dates":"May 5-7",
+			"images":{
+				"large":"http://fillmurray.com/450/300",
+				"small":"http://fillmurray.com/160/127",
+				"description":"My Great Event guest starring Bill Murray"
+			},
+			"location":"London, England",
+			"description":"Strata + Hadoop World brings together leading minds in big data; decision makers using the power of data to drive business strategy and practicioners."
+		},
+		{
+			"category":"Web Ops",
+			"title":"Velocity",
+			"dates":"May 27-29",
+			"images":{
+				"large":"http://fillmurray.com/450/300",
+				"small":"http://fillmurray.com/160/127",
+				"description":"My Great Event guest starring Bill Murray"
+			},
+			"location":"Santa Clara, CA",
+			"description":"Build a faster and stronger web for the future and today. Velocity is about the people and technologies that keep the web fast."
+		},
+		{
+			"category":"Internet of Things",
+			"title":"Solid",
+			"dates":"June 23-25",
+			"images":{
+				"large":"http://fillmurray.com/450/300",
+				"small":"http://fillmurray.com/160/127",
+				"description":"My Great Event guest starring Bill Murray"
+			},
+			"location":"San Francisco, CA",
+			"description":"The programming world is creating disruptive innovation as profound as the Internet itself."
+		}
+	]
+}

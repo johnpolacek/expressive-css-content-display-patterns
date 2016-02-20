@@ -1,0 +1,24 @@
+@import '_mixins/containers.generator.scss';
+
+/* Containers */
+$widths: ('320','400','480','560','640','720','800','960','1100','1200');
+@include containersGenerator($widths,'box');
+.box-center { margin-left:auto; margin-right:auto; }
+
+.box-gradient-overlay {
+	display:block;
+	position:relative;
+	
+	&:after {
+		content: '';
+		width:100%; height:100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: inline-block;
+		background: linear-gradient(to bottom, transparent 50%,#000 100%);
+	}
+}
+.box-gradient-overlay img { width:100%; }
