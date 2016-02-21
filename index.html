@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Expressive CSS Content and Display Patterns</title>
-        <meta name="description" content="An approach to writing lightweight, scalable CSS using utility classes that are easy to write and understand.">
+        <title>Content and Display Patterns with Expressive CSS</title>
+        <meta name="description" content="How to implement Content and Display Patterns using Expressive CSS, an approach to writing lightweight, scalable CSS using utility classes that are easy to write and understand.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,200,200italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="./css/style.min.css">
@@ -12,6 +12,19 @@
     </head>
     <body class="bgr-grey-lt">
         <div class="box-1100 box-center group pad-3 s-pad-2">
+            <section class="marg-1-left grid-12 pad-3-left rel">
+                <a class="border-0" href="https://twitter.com/johnpolacek"><img src="img/johnpolacek.jpg" alt="John Polacek" width="36" height="36" class="box-circle marg-1-right abs pos-top pos-left"></a>
+                <div class="text-small pad-2-left pad-1-top">
+                    <p class="text-smaller">
+                        <span><a class="border-0" href="http://johnpolacek.com">John Polacek</a></span>
+                        <span class="text-grey border-left marg-1-sides"></span>
+                        <span><a class="border-0" href="https://twitter.com/johnpolacek">@johnpolacek</a></span>
+                        <span class="text-grey border-left marg-1-sides"></span>
+                        <span><a class="border-0" href="http://johnpolacek.com">johnpolacek.com</a></span>
+                    </p>
+                </div>
+                
+            </section>
             <section class="grid-12 pad-2-top s-pad-0">
                 <div class="grid-12 pad-2-bottom border-bottom marg-3-bottom">
                     <h1 class="text-green-dk text-light">Content &amp; Display Patterns with Expressive CSS</h1>
@@ -30,10 +43,10 @@
                     <p>CSS is entirely concerned with display, yet in the pursuit of being “semantic” we often permeate our stylesheets with content references.</p>
                     
                     <div class="bgr-white border pad-2-top pad-2-sides marg-2-bottom">
-<pre><code>&lt;div class="event"&gt;
-    &lt;h1 class="event__title"&gt;Star Wars: The Force Awakens Premiere&lt;/h1&gt;
-    &lt;p class="event__date"&gt;Dec 20, 2015&lt;/p&gt;
-    &lt;p class="event__location"&gt;Ritz East, Philadelphia PA&lt;/p&gt;
+<pre><code>&lt;div class=<strong class="text-purple">"event"</strong>&gt;
+    &lt;h1 class=<strong class="text-purple">"event__title"</strong>&gt;Star Wars: The Force Awakens Premiere&lt;/h1&gt;
+    &lt;p class=<strong class="text-purple">"event__date"</strong>&gt;Dec 20, 2015&lt;/p&gt;
+    &lt;p class=<strong class="text-purple">"event__location"</strong>&gt;Ritz East, Philadelphia PA&lt;/p&gt;
 &lt;/div&gt;</code></pre>
                     </div>
                     
@@ -47,13 +60,14 @@
     &lt;span class="bold"&gt;February 17-20&lt;/span&gt;</code></pre>
                     </div>
 
-                    <p>Many front end developers have a strong negative reaction when they see markup like the above. That’s ok. Try to keep reading if you can.</p>
+                    <p>Many front end developers have a strong negative reaction when they see markup like the above.</p>
 
                     <blockquote class="border bgr-white pad-2 marg-2-top italic">
                         <p>For individuals weaned on an ideology where “semantic HTML” means using content-derived class names (and even then, only as a last resort), it usually requires you to work on a large application before you can become acutely aware of the impractical nature of that approach. You have to be prepared to disgard old ideas, look at alternatives, and even revisit ways that you may have previously dismissed.</p>
                         <cite class="text-small italic bold pad-1-bottom block">From <a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/">About HTML Semantics and Front-End Architecture</a> by Necolas Gallagher</cite>
                     </blockquote>
-                    <ul class="pad-1-vert">
+                    
+                    <ul class="pad-2-vert">
                         <li><a href="https://blog.colepeters.com/building-and-shipping-functional-css/">Building and shipping functional CSS</a></li>
                         <li><a href="http://seesparkbox.com/foundry/naming_css_stuff_is_really_hard">Naming CSS Stuff Is Really Hard</a></li>
                         <li><a href="http://tympanus.net/codrops/2013/01/22/defending-presentational-class-names/">Defending Presentational Class Names</a></li>
@@ -84,9 +98,9 @@
 
                 <iframe class="marg-3-bottom" height='900' scrolling='no' src='//codepen.io/johnpolacek/embed/eJoErV/?height=900&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/johnpolacek/pen/eJoErV/'>Content Display Patterns with Expressive CSS Basic Example</a> by John Polacek (<a href='http://codepen.io/johnpolacek'>@johnpolacek</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
                 
-                <p>To build this example, I wrote markup then simply added CSS utility classes that are part of the default <a href="http://johnpolacek.github.io/expressive-css/styleguide/">Expressive CSS Styleguide</a>. I was nearly able to achieve the layout without writing any new CSS.</p>
+                <p>To build this example, I wrote markup then simply added CSS utility classes that are part of the default <a href="http://johnpolacek.github.io/expressive-css/styleguide/">Expressive CSS Styleguide</a>. I was nearly able to achieve the layout <em class="bold">without writing any new CSS</em>.</p>
                 <p>There were only two instances when it was necessary to add new styles. I added a <code>.box-gradient-overlay</code> so the white text on the main image would be readable, and a thick border left class for the colored line on the category kicker.</p>
-                <p>Portability is one of the main benefits of the Expressive CSS approach. Scalability is another. As a website grows, it is important to keep stylesheets small and maintainable.</p>
+                <p>Portability is one of the main benefits of the Expressive CSS approach. Scalability is another. As a website, project or application grows, it is important to keep stylesheets small and maintainable.</p>
 
                 <p class="marg-2-top"><a href="http://codepen.io/johnpolacek/pen/eJoErV" target="_blank">View on Codepen</a></p>
                 <p><a href="https://github.com/johnpolacek/expressive-css-content-display-patterns" target="_blank">View on Github</a></p>
@@ -129,6 +143,8 @@
 &lt;p class="text-small pad-0"&gt;{{ events[i].description }}&lt;/p&gt;</code></pre>
                 </div>
 
+                <p>Breaking down our display patterns into template partials (components) gives us the opportunity to keep our codebase even more DRY and maintainable. We can change our components at will, without needing to touch any CSS or the underlying content itself.</p>
+
                 <p><a href="demo-template.php" target="_blank">View the Template Demo</a></p>
                 <p><a href="https://github.com/johnpolacek/expressive-css-content-display-patterns/blob/master/templates/events.html" target="_blank">View the Events Template Code</a></p>
             </section>
@@ -143,8 +159,13 @@
                     <li><a href="http://danielmall.com/articles/content-display-patterns/">Content &amp; Display Patterns</a></li>
                     <li><a href="http://johnpolacek.github.io/expressive-css/">Expressive CSS</a></li>
                     <li><a href="http://www.fillmurray.com/">fillmurray.com</a></li>
+                    <li><a href="https://www.stevensegallery.com/">stevensegallery.com</a></li>
                 </ul>
             </section>
+
+            <div id="disqus_thread"></div>
+            <script>(function(){var d = document, s = d.createElement('script');s.src = '//johnpolacek.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
         </div>
     </body>
 </html>
